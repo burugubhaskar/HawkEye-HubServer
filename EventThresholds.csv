@@ -1,0 +1,6 @@
+Parameter,Width,Threshold
+High,100,2
+Medium,10000,6
+Low,20000,10
+Disarmed,700000,700000
+Temperature,55,55

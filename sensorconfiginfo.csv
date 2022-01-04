@@ -1,0 +1,12 @@
+hub,channel,sensorid,sensitivity
+192.168.1.100,Left,1,Medium
+192.168.1.100,Left,2,Medium
+192.168.1.100,Left,3,Medium
+192.168.1.100,Left,4,Medium
+192.168.1.100,Left,5,Medium
+192.168.1.100,Right,1,Medium
+192.168.1.100,Right,2,Medium
+192.168.1.100,Right,3,Medium
+192.168.1.100,Right,4,Medium
+192.168.1.100,Right,5,Medium
+
