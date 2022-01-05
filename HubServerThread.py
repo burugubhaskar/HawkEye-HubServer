@@ -93,7 +93,7 @@ class HubServer(QtCore.QThread):
            # sensitivity = sensor_details['sensitivity'][0]
             Event = {
                         'date'                      :  datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
-                        'hub_id'                    :  hub_id,
+                        'hub_id'                    :  '192.168.1.100',
                         'hub_channel'               :  channel,
                         'sensor_id'                 :  RT_ID,
                         'event'                     :  'Vibration',
@@ -103,12 +103,14 @@ class HubServer(QtCore.QThread):
                     (self.pd_Event_Thresholds['Parameter'] == sensitivity), 'Threshold'].values[0]
                 VibrationMgnthreshold = self.pd_Event_Thresholds.loc[
                     (self.pd_Event_Thresholds['Parameter'] == sensitivity), 'Width'].values[0]
-              #  Temperaturethreshold = self.pd_Event_Thresholds.loc[
-              #      (self.pd_Event_Thresholds['Parameter'] == 'Temperature'), 'Threshold'].values[0]
+                Temperaturethreshold = self.pd_Event_Thresholds.loc[
+                    (self.pd_Event_Thresholds['Parameter'] == 'Temperature'), 'Threshold'].values[0]
             except:
                 print('Invalid Sensitivity')
                 return False, None, 'Invalid Sensitivity'
-            Temperaturethreshold = 60 #sensor_details['fire_trigger'][0]
+            #Temperaturethreshold = 60 #sensor_details['fire_trigger'][0]
+            print('Read Temperature',Temp)
+            print('Threshold',Temperaturethreshold)
             if Temp >= Temperaturethreshold:
                 Event['event'] = 'fire'
             elif Magnetic == True:
